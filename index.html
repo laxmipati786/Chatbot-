@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TransitAI - Smart Public Transport Planner</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <img src="m_bali_l_393_629.webp" alt="TransitAI Logo">
+                    <span>TransitAI</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="auth-buttons">
+                    <a href="#" class="btn btn-outline">Log In</a>
+                    <a href="#" class="btn btn-primary">Sign Up</a>
+                </div>
+                <button class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>AI-Powered Public Transport Planner</h1>
+                    <p class="subtitle">Find the fastest, cheapest, and most convenient routes across multiple transit systems with our intelligent routing algorithm.</p>
+                    
+                    <div class="search-box">
+                        <div class="input-group">
+                            <label for="origin"><i class="fas fa-map-marker-alt"></i> From</label>
+                            <input type="text" id="origin" placeholder="Current location or address">
+                        </div>
+                        <div class="input-group">
+                            <label for="destination"><i class="fas fa-flag"></i> To</label>
+                            <input type="text" id="destination" placeholder="Destination address">
+                        </div>
+                        <button id="search-btn" class="btn btn-primary">
+                            <i class="fas fa-route"></i> Find Route
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="blog-1.jpg" alt="Public transportation">
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <h2>Why Choose TransitAI?</h2>
+                <p class="section-description">Our advanced algorithms analyze multiple factors to provide you with the best possible routes.</p>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3>Real-Time Optimization</h3>
+                        <p>Get routes that adapt to current traffic conditions, delays, and service changes in real-time.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>Multi-Modal Routing</h3>
+                        <p>Combine buses, trains, trams, ferries, and even bike-share or walking for the perfect journey.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-cog"></i>
+                        </div>
+                        <h3>Personalized Preferences</h3>
+                        <p>Set your priorities: fastest route, fewest transfers, wheelchair access, or lowest cost.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-globe-americas"></i>
+                        </div>
+                        <h3>Global Coverage</h3>
+                        <p>Works with transit systems in over 100 major cities worldwide with more added regularly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="how-it-works">
+            <div class="container">
+                <h2>How It Works</h2>
+                <p class="section-description">Get the perfect route in just three simple steps.</p>
+                
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Enter Your Journey</h3>
+                        <p>Tell us where you're starting from and where you need to go. We'll automatically detect your current location if you allow it.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>AI Analyzes Options</h3>
+                        <p>Our system evaluates thousands of possible route combinations using real-time data and your preferences.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Get Your Perfect Route</h3>
+                        <p>Receive step-by-step directions with accurate times, platform numbers, and even crowdedness predictions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="results" class="results-section hidden">
+            <div class="container">
+                <div class="results-header">
+                    <h2>Recommended Routes</h2>
+                    <div class="sort-options">
+                        <span>Sort by:</span>
+                        <select id="sort-by">
+                            <option value="fastest">Fastest</option>
+                            <option value="cheapest">Cheapest</option>
+                            <option value="fewest-transfers">Fewest Transfers</option>
+                            <option value="most-comfortable">Most Comfortable</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="results-container">
+                    <!-- Results will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="pricing">
+            <div class="container">
+                <h2>Flexible Pricing Plans</h2>
+                <p class="section-description">Choose the plan that works best for your needs</p>
+                
+                <div class="pricing-cards">
+                    <div class="pricing-card">
+                        <h3>Free</h3>
+                        <div class="price">$0<span>/month</span></div>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check"></i> Basic route planning</li>
+                            <li><i class="fas fa-check"></i> 5 searches per day</li>
+                            <li><i class="fas fa-check"></i> Standard transit data</li>
+                            <li><i class="fas fa-times"></i> No real-time updates</li>
+                            <li><i class="fas fa-times"></i> No premium features</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Get Started</a>
+                    </div>
+                    
+                    <div class="pricing-card featured">
+                        <div class="popular-badge">Most Popular</div>
+                        <h3>Pro</h3>
+                        <div class="price">$4.99<span>/month</span></div>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check"></i> Advanced route planning</li>
+                            <li><i class="fas fa-check"></i> Unlimited searches</li>
+                            <li><i class="fas fa-check"></i> Real-time updates</li>
+                            <li><i class="fas fa-check"></i> Personalized preferences</li>
+                            <li><i class="fas fa-check"></i> Offline access</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">Subscribe Now</a>
+                    </div>
+                    
+                    <div class="pricing-card">
+                        <h3>Enterprise</h3>
+                        <div class="price">Custom</div>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check"></i> All Pro features</li>
+                            <li><i class="fas fa-check"></i> API access</li>
+                            <li><i class="fas fa-check"></i> White-label solutions</li>
+                            <li><i class="fas fa-check"></i> Dedicated support</li>
+                            <li><i class="fas fa-check"></i> Custom integrations</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">Contact Sales</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="contact-content">
+                    <h2>Have Questions?</h2>
+                    <p>Our team is here to help you with any questions about our service or to discuss custom solutions for your business.</p>
+                    
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <img src="images/logo.svg" alt="TransitAI Logo">
+                        <span>TransitAI</span>
+                    </a>
+                    <p>Intelligent public transport planning powered by artificial intelligence.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">API</a></li>
+                        <li><a href="#">Integrations</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 TransitAI. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <!-- In a production environment, you would include the actual API integration -->
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script> -->
+</body>
+</html>
